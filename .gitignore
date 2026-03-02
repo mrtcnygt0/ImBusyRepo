@@ -1,0 +1,35 @@
+# Built files
+*.apk
+*.aar
+*.ap_
+*.aab
+
+# IDE files
+.idea/
+*.iml
+.gradle/
+local.properties
+
+# Build output
+build/
+app/build/
+app/release/
+
+# Signing
+*.jks
+*.keystore
+keystore.properties
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# ONNX models (too large for git)
+*.onnx
+*.ort
+
+# Misc
+captures/
+.externalNativeBuild/
+.cxx/
+output.json

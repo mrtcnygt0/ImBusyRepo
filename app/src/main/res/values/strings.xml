@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Uygulama Genel -->
+    <string name="app_name">Şu an Meşgulüm</string>
+    <string name="app_description">Gelen aramaları otomatik yanıtlayıp, kişiselleştirilmiş sesli mesajlarla karşı tarafı bilgilendirin.</string>
+    <string name="app_version">Versiyon 1.0.0</string>
+
+    <!-- Navigation -->
+    <string name="nav_dashboard">Ana Ekran</string>
+    <string name="nav_modes">Modlar</string>
+    <string name="nav_logs">Geçmiş</string>
+    <string name="nav_settings">Ayarlar</string>
+
+    <!-- Dashboard -->
+    <string name="service_label">Meşgul Servisi</string>
+    <string name="service_active">Aktif - Aramalar izleniyor</string>
+    <string name="service_inactive">Pasif - Servis kapalı</string>
+    <string name="quick_stats">Hızlı İstatistikler</string>
+    <string name="today_rejected">Bugün Reddedilen</string>
+    <string name="most_used_mode">En Çok Kullanılan</string>
+    <string name="total_modes">Toplam Mod</string>
+    <string name="manage_modes">Modları Yönet</string>
+    <string name="view_logs">Geçmiş Loglar</string>
+    <string name="settings">Ayarlar</string>
+
+    <!-- Modlar Ekranı -->
+    <string name="add_mode">Yeni Mod Ekle</string>
+    <string name="no_modes">Henüz mod eklenmemiş.\nAşağıdaki + butonuna basarak yeni mod ekleyebilirsiniz.</string>
+    <string name="dialog_add_mode_title">Yeni Mod Ekle</string>
+    <string name="dialog_edit_mode_title">Modu Düzenle</string>
+    <string name="mode_name_hint">Mod Adı (ör: Toplantı)</string>
+    <string name="mode_text_hint">Metin (ör: Toplantıdayım, seni sonra arayacağım.)</string>
+    <string name="paralinguistic_hint">İpucu: İlerde desteklenecek paralinguistik etiketler: [laugh], [cough], [sigh]. Şu an bu etiketler görmezden gelinir.</string>
+    <string name="delete_mode_title">Modu Sil</string>
+    <string name="delete_mode_message">\"%1$s\" modunu silmek istediğinizden emin misiniz?</string>
+
+    <!-- Log Ekranı -->
+    <string name="call_history">Arama Geçmişi</string>
+    <string name="no_logs">Henüz arama kaydı yok.\nServis aktifken gelen aramalar burada görünecek.</string>
+    <string name="clear_all">Tümünü Temizle</string>
+    <string name="delete_log_title">Logu Sil</string>
+    <string name="delete_log_message">Bu arama kaydını silmek istediğinizden emin misiniz?</string>
+    <string name="clear_all_logs_title">Tümünü Temizle</string>
+    <string name="clear_all_logs_message">Tüm arama kayıtlarını silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.</string>
+
+    <!-- Ayarlar -->
+    <string name="auto_answer">Otomatik Yanıtlama</string>
+    <string name="auto_answer_desc">Aktif olduğunda, gelen aramalar varsayılan modla otomatik yanıtlanır.</string>
+    <string name="language_setting">Dil Seçimi</string>
+    <string name="turkish">Türkçe</string>
+    <string name="english">English</string>
+    <string name="language_changed">Dil değiştirildi. Değişiklik bir sonraki açılışta geçerli olacak.</string>
+    <string name="premium_voice_pack">Gelişmiş Ses Paketi</string>
+    <string name="premium_voice_desc">Chatterbox tabanlı yüksek kaliteli ses motoru. Doğal tonlamalar, duygusal ifadeler ([laugh], [cough] vb.) ve daha gerçekçi ses sentezi.</string>
+    <string name="premium_not_purchased">Henüz satın alınmadı</string>
+    <string name="premium_purchased">Satın Alındı ✓</string>
+    <string name="premium_active">Aktif ✓</string>
+    <string name="premium_pending">İşlem Beklemede…</string>
+    <string name="purchase_premium">Gelişmiş Ses Paketini Satın Al - 2.99$</string>
+    <string name="simulate_purchase">Test: Satın Almayı Simüle Et</string>
+
+    <!-- Bildirimler -->
+    <string name="notification_channel_service">Meşgul Servisi</string>
+    <string name="notification_channel_service_desc">Servisin çalıştığını gösteren bildirim</string>
+    <string name="notification_channel_incoming_call">Gelen Arama</string>
+    <string name="notification_channel_incoming_call_desc">Gelen arama algılandığında gösterilen bildirim</string>
+    <string name="notification_channel_general">Genel</string>
+    <string name="notification_channel_general_desc">Genel bildirimler</string>
+    <string name="notification_service_title">Şu an Meşgulüm aktif</string>
+    <string name="notification_service_text">Gelen aramalar izleniyor</string>
+    <string name="notification_stop_service">Servisi Durdur</string>
+    <string name="notification_incoming_call_title">Gelen Arama Algılandı</string>
+    <string name="notification_incoming_call_text">Arayan: %1$s - Bir mod seçin</string>
+    <string name="notification_silent_reject">Sessizce Reddet</string>
+    <string name="notification_tts_title">Sesli Mesaj Okunuyor</string>
+    <string name="notification_tts_text">Mesajınız karşı tarafa iletiliyor…</string>
+
+    <!-- Gelen Arama Ekranı -->
+    <string name="incoming_call_label">Gelen Arama</string>
+    <string name="unknown_caller">Bilinmeyen Numara</string>
+    <string name="select_busy_mode">Meşguliyet Modu Seçin</string>
+    <string name="show_all_modes">Tüm Modları Göster ›</string>
+    <string name="no_modes_short">Henüz mod eklenmemiş</string>
+    <string name="ignore_call">Müdahale Etme</string>
+    <string name="mode_activating">\"%1$s\" modu etkinleştiriliyor…</string>
+
+    <!-- Mod Seçim Ekranı -->
+    <string name="select_mode_title">Mod Seçin</string>
+    <string name="caller_number">Arayan: %1$s</string>
+    <string name="silent_reject">Sessizce Reddet</string>
+    <string name="mode_selected">\"%1$s\" modu seçildi</string>
+
+    <!-- Dashboard Uyarılar -->
+    <string name="role_warning_title">⚠️ Çağrı Tarama Rolü Aktif Değil</string>
+    <string name="role_warning_message">Uygulamanın gelen aramaları algılayabilmesi için çağrı tarama rolünün verilmesi gerekiyor. Yedek mekanizma aktif ancak tam işlevsellik için rolü etkinleştirin.</string>
+    <string name="role_request_button">Rolü Etkinleştir</string>
+    <string name="role_not_available">Bu cihaz çağrı tarama rolünü desteklemiyor. Yedek mekanizma ile aramalar algılanacak.</string>
+
+    <!-- Genel -->
+    <string name="save">Kaydet</string>
+    <string name="cancel">İptal</string>
+    <string name="delete">Sil</string>
+    <string name="clear">Temizle</string>
+    <string name="edit">Düzenle</string>
+    <string name="error_empty_fields">Lütfen tüm alanları doldurun</string>
+    <string name="error_end_call">Arama sonlandırılamadı. Lütfen izinleri kontrol edin.</string>
+    <string name="permissions_required">Uygulamanın düzgün çalışması için tüm izinlerin verilmesi gerekiyor.</string>
+    <string name="call_screening_enabled">Çağrı tarama servisi etkinleştirildi</string>
+
+</resources>
