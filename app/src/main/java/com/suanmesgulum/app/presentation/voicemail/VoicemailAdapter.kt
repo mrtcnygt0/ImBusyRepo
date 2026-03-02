@@ -46,7 +46,7 @@ class VoicemailAdapter(
         holder.itemView.setOnClickListener { onItemClick(item) }
     }
 
-    private fun formatDuration(seconds: Long): String {
+    private fun formatDuration(seconds: Int): String {
         val min = seconds / 60
         val sec = seconds % 60
         return String.format("%d:%02d", min, sec)

@@ -112,7 +112,7 @@ class VoicemailManager @Inject constructor(
 
         val notification = NotificationCompat.Builder(context, ImBusyApplication.CHANNEL_GENERAL)
             .setSmallIcon(R.drawable.ic_voicemail)
-            .setContentTitle(context.getString(R.string.voicemail_new_notification_title))
+            .setContentTitle(context.getString(R.string.notification_voicemail_title))
             .setContentText(context.getString(R.string.voicemail_from, caller))
             .setStyle(NotificationCompat.BigTextStyle().bigText(transcriptPreview))
             .setContentIntent(pendingIntent)

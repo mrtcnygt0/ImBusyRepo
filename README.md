@@ -130,16 +130,16 @@ com.suanmesgulum.app/
 
 ## 🖥️ Screens / Ekranlar
 
-| Screen                     | Description                                                          |
-| -------------------------- | -------------------------------------------------------------------- |
-| **Dashboard**              | Service toggle, today's call stats, assistant buttons, quick nav     |
-| **Modes**                  | Create/edit/delete busy modes, set default mode, reorder             |
-| **Call Logs**              | List of auto-answered calls with date, caller info, mode used        |
-| **Settings**               | Auto-answer toggle, language selection (TR/EN), premium purchase     |
-| **Mode Select**            | Dialog-style activity launched from notification for quick mode pick |
-| **Live Call** (v2)         | Real-time transcript of assistant-caller dialogue, continue/reject   |
-| **Assistant Customize** (v2) | ViewPager2 with 3 tabs: General, Messages, Voices                 |
-| **Voicemail** (v2)         | List voicemails with playback, transcript, archive, delete           |
+| Screen                       | Description                                                          |
+| ---------------------------- | -------------------------------------------------------------------- |
+| **Dashboard**                | Service toggle, today's call stats, assistant buttons, quick nav     |
+| **Modes**                    | Create/edit/delete busy modes, set default mode, reorder             |
+| **Call Logs**                | List of auto-answered calls with date, caller info, mode used        |
+| **Settings**                 | Auto-answer toggle, language selection (TR/EN), premium purchase     |
+| **Mode Select**              | Dialog-style activity launched from notification for quick mode pick |
+| **Live Call** (v2)           | Real-time transcript of assistant-caller dialogue, continue/reject   |
+| **Assistant Customize** (v2) | ViewPager2 with 3 tabs: General, Messages, Voices                    |
+| **Voicemail** (v2)           | List voicemails with playback, transcript, archive, delete           |
 
 ---
 

@@ -37,7 +37,7 @@ class AssistantCustomizeViewModel @Inject constructor(
 
     fun saveSettings(settings: AssistantSettings) {
         viewModelScope.launch {
-            assistantSettingsRepository.updateSettings(settings)
+            assistantSettingsRepository.saveSettings(settings)
             _saveSuccess.value = true
         }
     }

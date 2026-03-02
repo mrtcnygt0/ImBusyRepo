@@ -658,7 +658,7 @@ class CallOrchestratorService : Service() {
         )
 
         return NotificationCompat.Builder(this, ImBusyApplication.CHANNEL_INCOMING_CALL)
-            .setContentTitle(getString(R.string.assistant_active_title))
+            .setContentTitle(getString(R.string.notification_orchestrator_title))
             .setContentText(text)
             .setSmallIcon(R.drawable.ic_notification)
             .setContentIntent(pendingIntent)

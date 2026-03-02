@@ -16,7 +16,7 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.material.button.MaterialButton
 import com.suanmesgulum.app.R
 import com.suanmesgulum.app.service.orchestrator.CallOrchestratorService
-import com.suanmesgulum.app.service.orchestrator.CallOrchestratorService.Companion.OrchestratorState
+import com.suanmesgulum.app.service.orchestrator.CallOrchestratorService.OrchestratorState
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 

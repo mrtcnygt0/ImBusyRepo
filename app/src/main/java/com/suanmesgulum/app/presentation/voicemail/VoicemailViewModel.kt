@@ -45,7 +45,7 @@ class VoicemailViewModel @Inject constructor(
 
     fun deleteVoicemail(voicemail: Voicemail) {
         viewModelScope.launch {
-            voicemailRepository.deleteVoicemail(voicemail)
+            voicemailRepository.deleteVoicemail(voicemail.id)
         }
     }
 }
