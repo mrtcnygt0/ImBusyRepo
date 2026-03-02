@@ -86,6 +86,18 @@ dependencies {
     // Preferences DataStore
     implementation("androidx.datastore:datastore-preferences:1.0.0")
 
+    // ViewPager2 (Asistanı Özelleştir ekranı sekmeler için)
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
+
+    // Vosk STT (Cihaz içi konuşma tanıma)
+    implementation("com.alphacephei:vosk-android:0.3.47")
+
+    // OkHttp (Vosk model indirme)
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
+    // Gson (JSON parse)
+    implementation("com.google.code.gson:gson:2.10.1")
+
     // Testing
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

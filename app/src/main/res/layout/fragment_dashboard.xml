@@ -291,9 +291,35 @@
             android:id="@+id/btnSettings"
             android:layout_width="match_parent"
             android:layout_height="56dp"
+            android:layout_marginBottom="12dp"
             android:text="@string/settings"
             android:textSize="16sp"
             app:icon="@drawable/ic_settings"
+            app:iconGravity="start"
+            app:cornerRadius="12dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+        <!-- v2: Asistan ve Sesli Mesaj Butonları -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCustomizeAssistant"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="12dp"
+            android:text="@string/dashboard_customize_assistant"
+            android:textSize="16sp"
+            app:icon="@drawable/ic_assistant"
+            app:iconGravity="start"
+            app:cornerRadius="12dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnVoicemails"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="12dp"
+            android:text="@string/dashboard_voicemails"
+            android:textSize="16sp"
+            app:icon="@drawable/ic_voicemail"
             app:iconGravity="start"
             app:cornerRadius="12dp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton" />

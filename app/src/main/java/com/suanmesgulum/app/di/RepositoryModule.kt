@@ -1,9 +1,7 @@
 package com.suanmesgulum.app.di
 
-import com.suanmesgulum.app.data.repository.CallLogRepositoryImpl
-import com.suanmesgulum.app.data.repository.CustomModeRepositoryImpl
-import com.suanmesgulum.app.domain.repository.CallLogRepository
-import com.suanmesgulum.app.domain.repository.CustomModeRepository
+import com.suanmesgulum.app.data.repository.*
+import com.suanmesgulum.app.domain.repository.*
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -28,4 +26,22 @@ abstract class RepositoryModule {
     abstract fun bindCallLogRepository(
         impl: CallLogRepositoryImpl
     ): CallLogRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindCallSessionRepository(
+        impl: CallSessionRepositoryImpl
+    ): CallSessionRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindVoicemailRepository(
+        impl: VoicemailRepositoryImpl
+    ): VoicemailRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindAssistantSettingsRepository(
+        impl: AssistantSettingsRepositoryImpl
+    ): AssistantSettingsRepository
 }

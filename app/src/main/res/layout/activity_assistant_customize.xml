@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        app:title="@string/assistant_customize_title"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/ic_close"
+        app:navigationIconTint="@android:color/white" />
+
+    <!-- Tab Layout -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        app:tabTextColor="#BBBBBB"
+        app:tabSelectedTextColor="@android:color/white"
+        app:tabIndicatorColor="@android:color/white"
+        app:tabMode="fixed"
+        app:tabGravity="fill" />
+
+    <!-- ViewPager -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Save Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSaveSettings"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_margin="16dp"
+        android:text="@string/save"
+        android:textAllCaps="false"
+        app:cornerRadius="12dp" />
+
+</LinearLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Asistan Adı -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/assistant_name_label"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAssistantName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="16dp" />
+
+        <!-- Kişilik -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/assistant_personality_label"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPersonality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:minLines="2" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="16dp" />
+
+        <!-- Dil Seçimi -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/assistant_language_label"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleSelection="true"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTurkish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/turkish"
+                style="@style/Widget.MaterialComponents.Chip.Choice" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipEnglish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/english"
+                style="@style/Widget.MaterialComponents.Chip.Choice" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </LinearLayout>
+</ScrollView>

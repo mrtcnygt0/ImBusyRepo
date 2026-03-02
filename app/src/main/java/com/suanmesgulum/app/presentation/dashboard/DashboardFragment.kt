@@ -18,6 +18,8 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.suanmesgulum.app.R
 import com.suanmesgulum.app.databinding.FragmentDashboardBinding
+import com.suanmesgulum.app.presentation.assistant.AssistantCustomizeActivity
+import com.suanmesgulum.app.presentation.voicemail.VoicemailActivity
 import com.suanmesgulum.app.service.BusyForegroundService
 import com.suanmesgulum.app.service.ServicePreferences
 import dagger.hilt.android.AndroidEntryPoint
@@ -105,6 +107,16 @@ class DashboardFragment : Fragment() {
         // "Rolü Etkinleştir" butonu
         binding.btnRequestRole.setOnClickListener {
             requestCallScreeningRole()
+        }
+
+        // v2: "Asistanı Özelleştir" butonu
+        binding.btnCustomizeAssistant.setOnClickListener {
+            startActivity(Intent(requireContext(), AssistantCustomizeActivity::class.java))
+        }
+
+        // v2: "Sesli Mesajlar" butonu
+        binding.btnVoicemails.setOnClickListener {
+            startActivity(Intent(requireContext(), VoicemailActivity::class.java))
         }
     }
 

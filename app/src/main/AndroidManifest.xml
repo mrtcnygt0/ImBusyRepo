@@ -11,6 +11,7 @@
     <!-- Foreground Service -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_PHONE_CALL" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
 
     <!-- Bildirim gönderme (API 33+) -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
@@ -73,6 +74,30 @@
             android:taskAffinity=""
             android:launchMode="singleInstance" />
 
+        <!-- v2: Canlı Arama Ekranı -->
+        <activity
+            android:name=".presentation.livecall.LiveCallActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SuAnMesgulum.IncomingCall"
+            android:excludeFromRecents="true"
+            android:taskAffinity="com.suanmesgulum.livecall"
+            android:launchMode="singleInstance"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"
+            android:showOnLockScreen="true" />
+
+        <!-- v2: Asistan Özelleştirme Ekranı -->
+        <activity
+            android:name=".presentation.assistant.AssistantCustomizeActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SuAnMesgulum" />
+
+        <!-- v2: Sesli Mesajlar Ekranı -->
+        <activity
+            android:name=".presentation.voicemail.VoicemailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SuAnMesgulum" />
+
         <!-- CallScreeningService: Gelen aramaları yakalama -->
         <service
             android:name=".service.BusyCallScreeningService"
@@ -98,6 +123,12 @@
             android:exported="false"
             android:foregroundServiceType="phoneCall" />
 
+        <!-- v2: CallOrchestrator Servisi (Asistan çağrı yönetimi) -->
+        <service
+            android:name=".service.orchestrator.CallOrchestratorService"
+            android:exported="false"
+            android:foregroundServiceType="phoneCall|microphone" />
+
         <!-- BroadcastReceiver: Bildirim butonları ve çağrı aksiyonları -->
         <receiver
             android:name=".service.CallActionReceiver"
@@ -106,6 +137,8 @@
                 <action android:name="com.suanmesgulum.ACTION_USE_MODE" />
                 <action android:name="com.suanmesgulum.ACTION_SILENT_REJECT" />
                 <action android:name="com.suanmesgulum.ACTION_STOP_SERVICE" />
+                <action android:name="com.suanmesgulum.ACTION_ASSISTANT_ANSWER" />
+                <action android:name="com.suanmesgulum.ACTION_IGNORE_CALL" />
             </intent-filter>
         </receiver>
 

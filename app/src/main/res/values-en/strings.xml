@@ -108,4 +108,83 @@
     <string name="permissions_required">All permissions are required for the app to work properly.</string>
     <string name="call_screening_enabled">Call screening service enabled</string>
 
+    <!-- v2: Notification Buttons -->
+    <string name="btn_assistant_answer">Assistant Answer</string>
+    <string name="btn_silent_reject">Silent Reject</string>
+    <string name="btn_ignore">Ignore</string>
+
+    <!-- v2: Notification Channels (new) -->
+    <string name="notification_channel_orchestrator">Assistant Service</string>
+    <string name="notification_channel_orchestrator_desc">Assistant call answering service notification</string>
+    <string name="notification_channel_voicemail">Voicemail</string>
+    <string name="notification_channel_voicemail_desc">New voicemail notifications</string>
+    <string name="notification_orchestrator_title">Assistant Active</string>
+    <string name="notification_orchestrator_text">Answering call…</string>
+    <string name="notification_voicemail_title">New Voicemail</string>
+    <string name="notification_voicemail_text">Voicemail received from %1$s</string>
+
+    <!-- v2: Live Call Screen -->
+    <string name="live_call_title">Live Call</string>
+    <string name="live_call_caller">Caller: %1$s</string>
+    <string name="live_call_status_answering">Answering…</string>
+    <string name="live_call_status_greeting">Playing greeting…</string>
+    <string name="live_call_status_listening">Caller speaking…</string>
+    <string name="live_call_status_waiting">Waiting for decision…</string>
+    <string name="live_call_status_farewell">Saying goodbye…</string>
+    <string name="live_call_status_voicemail">Recording voicemail…</string>
+    <string name="live_call_status_completed">Call completed</string>
+    <string name="live_call_status_idle">Waiting…</string>
+    <string name="live_call_btn_continue">Let Assistant Continue</string>
+    <string name="live_call_btn_reject">Reject &amp; End</string>
+    <string name="live_call_transcript_empty">No conversation yet…</string>
+    <string name="live_call_assistant_label">Assistant</string>
+    <string name="live_call_caller_label">Caller</string>
+
+    <!-- v2: Assistant Customization -->
+    <string name="assistant_customize_title">Customize Assistant</string>
+    <string name="assistant_tab_general">General</string>
+    <string name="assistant_tab_messages">Messages</string>
+    <string name="assistant_tab_voices">Voices</string>
+    <string name="assistant_name_label">Assistant Name</string>
+    <string name="assistant_name_hint">e.g., Busy Assistant</string>
+    <string name="assistant_personality_label">Personality</string>
+    <string name="assistant_personality_hint">e.g., Polite and professional</string>
+    <string name="assistant_language_label">Default Language</string>
+    <string name="assistant_greeting_label">Greeting Message</string>
+    <string name="assistant_greeting_hint">e.g., Hello, I\'m busy right now. How can I help you?</string>
+    <string name="assistant_info_label">Info Gathering Message</string>
+    <string name="assistant_info_hint">e.g., I understand, I\'ll relay your message.</string>
+    <string name="assistant_farewell_label">Farewell Message</string>
+    <string name="assistant_farewell_hint">e.g., Thank you, have a nice day.</string>
+    <string name="assistant_voicemail_prompt_label">Voicemail Prompt</string>
+    <string name="assistant_voicemail_prompt_hint">e.g., Would you like to leave a voicemail? Please speak after the beep.</string>
+    <string name="assistant_settings_saved">Assistant settings saved</string>
+    <string name="assistant_voice_select_label">Voice Selection</string>
+    <string name="assistant_voice_preview">Preview</string>
+
+    <!-- v2: Voicemail -->
+    <string name="voicemail_title">Voicemail</string>
+    <string name="voicemail_empty">No voicemail yet.</string>
+    <string name="voicemail_from">Caller: %1$s</string>
+    <string name="voicemail_duration">Duration: %1$s</string>
+    <string name="voicemail_new">New</string>
+    <string name="voicemail_listened">Listened</string>
+    <string name="voicemail_transcript_label">Transcript</string>
+    <string name="voicemail_no_transcript">Transcript not available</string>
+    <string name="voicemail_play">Play</string>
+    <string name="voicemail_share">Share</string>
+    <string name="voicemail_archive">Archive</string>
+    <string name="voicemail_delete_confirm">Are you sure you want to delete this voicemail?</string>
+    <string name="nav_voicemail">Voicemail</string>
+
+    <!-- v2: Dashboard Additions -->
+    <string name="dashboard_assistant_status">Assistant Status</string>
+    <string name="dashboard_assistant_active">Assistant Active</string>
+    <string name="dashboard_assistant_inactive">Assistant Inactive</string>
+    <string name="dashboard_customize_assistant">Customize Assistant</string>
+    <string name="dashboard_voicemails">Voicemail</string>
+    <string name="dashboard_recent_sessions">Recent Sessions</string>
+    <string name="dashboard_no_sessions">No assistant sessions yet</string>
+    <string name="dashboard_session_summary">%1$s — %2$d messages</string>
+
 </resources>

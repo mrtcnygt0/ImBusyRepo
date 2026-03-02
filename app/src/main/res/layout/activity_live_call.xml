@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/black">
+
+    <!-- Top Bar: Caller Info + State -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal"
+        android:background="@color/primary_dark">
+
+        <TextView
+            android:id="@+id/tvLiveCallTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/live_call_title"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvCallerNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="#BBBBBB"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvCallState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/live_call_status_idle"
+            android:textColor="#4CAF50"
+            android:textSize="14sp"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+    <!-- Transcript Area -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollTranscript"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/llTranscriptContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTranscriptEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/live_call_transcript_empty"
+                android:textColor="#888888"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_marginTop="48dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Real-time partial text indicator -->
+    <LinearLayout
+        android:id="@+id/llPartialText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="4dp"
+        android:visibility="gone"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_mic"
+            app:tint="#FF9800" />
+
+        <TextView
+            android:id="@+id/tvPartialText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="#FF9800"
+            android:textSize="13sp"
+            android:textStyle="italic"
+            android:maxLines="2"
+            android:ellipsize="end" />
+    </LinearLayout>
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:id="@+id/llActionButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center"
+        android:background="#1A1A1A">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnContinue"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="@string/live_call_btn_continue"
+            android:textSize="13sp"
+            android:textAllCaps="false"
+            app:backgroundTint="#4CAF50"
+            app:icon="@drawable/ic_call_answer"
+            app:iconTint="@android:color/white"
+            app:cornerRadius="12dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnReject"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="@string/live_call_btn_reject"
+            android:textSize="13sp"
+            android:textAllCaps="false"
+            app:backgroundTint="#F44336"
+            app:icon="@drawable/ic_call_end"
+            app:iconTint="@android:color/white"
+            app:cornerRadius="12dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

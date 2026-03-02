@@ -22,6 +22,12 @@ class ImBusyApplication : Application() {
 
         /** Genel bildirimler için kanal */
         const val CHANNEL_GENERAL = "channel_general"
+
+        /** Asistan / Orchestrator servisi için kanal */
+        const val CHANNEL_ORCHESTRATOR = "channel_orchestrator"
+
+        /** Sesli mesaj bildirimleri için kanal */
+        const val CHANNEL_VOICEMAIL = "channel_voicemail"
     }
 
     override fun onCreate() {
@@ -60,9 +66,30 @@ class ImBusyApplication : Application() {
             description = getString(R.string.notification_channel_general_desc)
         }
 
+        val orchestratorChannel = NotificationChannel(
+            CHANNEL_ORCHESTRATOR,
+            getString(R.string.notification_channel_orchestrator),
+            NotificationManager.IMPORTANCE_LOW
+        ).apply {
+            description = getString(R.string.notification_channel_orchestrator_desc)
+            setShowBadge(false)
+        }
+
+        val voicemailChannel = NotificationChannel(
+            CHANNEL_VOICEMAIL,
+            getString(R.string.notification_channel_voicemail),
+            NotificationManager.IMPORTANCE_HIGH
+        ).apply {
+            description = getString(R.string.notification_channel_voicemail_desc)
+            enableVibration(true)
+            setShowBadge(true)
+        }
+
         val manager = getSystemService(NotificationManager::class.java)
         manager.createNotificationChannel(serviceChannel)
         manager.createNotificationChannel(incomingCallChannel)
         manager.createNotificationChannel(generalChannel)
+        manager.createNotificationChannel(orchestratorChannel)
+        manager.createNotificationChannel(voicemailChannel)
     }
 }

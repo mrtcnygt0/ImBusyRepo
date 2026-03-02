@@ -108,4 +108,83 @@
     <string name="permissions_required">Uygulamanın düzgün çalışması için tüm izinlerin verilmesi gerekiyor.</string>
     <string name="call_screening_enabled">Çağrı tarama servisi etkinleştirildi</string>
 
+    <!-- v2: Bildirim Butonları -->
+    <string name="btn_assistant_answer">Asistan Cevaplasın</string>
+    <string name="btn_silent_reject">Sessizce Reddet</string>
+    <string name="btn_ignore">Yok Say</string>
+
+    <!-- v2: Bildirim Kanalları (yeni) -->
+    <string name="notification_channel_orchestrator">Asistan Servisi</string>
+    <string name="notification_channel_orchestrator_desc">Asistan çağrı yanıtlama servisi bildirimi</string>
+    <string name="notification_channel_voicemail">Sesli Mesajlar</string>
+    <string name="notification_channel_voicemail_desc">Yeni sesli mesaj bildirimleri</string>
+    <string name="notification_orchestrator_title">Asistan Aktif</string>
+    <string name="notification_orchestrator_text">Çağrı yanıtlanıyor…</string>
+    <string name="notification_voicemail_title">Yeni Sesli Mesaj</string>
+    <string name="notification_voicemail_text">%1$s numarasından sesli mesaj alındı</string>
+
+    <!-- v2: Canlı Arama Ekranı -->
+    <string name="live_call_title">Canlı Arama</string>
+    <string name="live_call_caller">Arayan: %1$s</string>
+    <string name="live_call_status_answering">Cevapanıyor…</string>
+    <string name="live_call_status_greeting">Karşılama mesajı okunuyor…</string>
+    <string name="live_call_status_listening">Arayan konuşuyor…</string>
+    <string name="live_call_status_waiting">Karar bekleniyor…</string>
+    <string name="live_call_status_farewell">Vedalaşılıyor…</string>
+    <string name="live_call_status_voicemail">Sesli mesaj kaydediliyor…</string>
+    <string name="live_call_status_completed">Arama tamamlandı</string>
+    <string name="live_call_status_idle">Bekleniyor…</string>
+    <string name="live_call_btn_continue">Asistan Devam Etsin</string>
+    <string name="live_call_btn_reject">Reddet ve Kapat</string>
+    <string name="live_call_transcript_empty">Henüz konuşma yok…</string>
+    <string name="live_call_assistant_label">Asistan</string>
+    <string name="live_call_caller_label">Arayan</string>
+
+    <!-- v2: Asistan Özelleştirme -->
+    <string name="assistant_customize_title">Asistanı Özelleştir</string>
+    <string name="assistant_tab_general">Genel</string>
+    <string name="assistant_tab_messages">Mesajlar</string>
+    <string name="assistant_tab_voices">Sesler</string>
+    <string name="assistant_name_label">Asistan Adı</string>
+    <string name="assistant_name_hint">ör: Meşgulüm Asistanı</string>
+    <string name="assistant_personality_label">Kişilik</string>
+    <string name="assistant_personality_hint">ör: Kibar ve profesyonel</string>
+    <string name="assistant_language_label">Varsayılan Dil</string>
+    <string name="assistant_greeting_label">Karşılama Mesajı</string>
+    <string name="assistant_greeting_hint">ör: Merhaba, şu an meşgulüm. Size nasıl yardımcı olabilirim?</string>
+    <string name="assistant_info_label">Bilgi Toplama Mesajı</string>
+    <string name="assistant_info_hint">ör: Anladım, mesajınızı ileteceğim.</string>
+    <string name="assistant_farewell_label">Veda Mesajı</string>
+    <string name="assistant_farewell_hint">ör: Teşekkür ederim, iyi günler.</string>
+    <string name="assistant_voicemail_prompt_label">Sesli Mesaj Yönlendirme</string>
+    <string name="assistant_voicemail_prompt_hint">ör: Sesli mesaj bırakmak ister misiniz? Bip sesinden sonra konuşabilirsiniz.</string>
+    <string name="assistant_settings_saved">Asistan ayarları kaydedildi</string>
+    <string name="assistant_voice_select_label">Ses Seçimi</string>
+    <string name="assistant_voice_preview">Önizle</string>
+
+    <!-- v2: Sesli Mesajlar -->
+    <string name="voicemail_title">Sesli Mesajlar</string>
+    <string name="voicemail_empty">Henüz sesli mesaj yok.</string>
+    <string name="voicemail_from">Arayan: %1$s</string>
+    <string name="voicemail_duration">Süre: %1$s</string>
+    <string name="voicemail_new">Yeni</string>
+    <string name="voicemail_listened">Dinlendi</string>
+    <string name="voicemail_transcript_label">Transkript</string>
+    <string name="voicemail_no_transcript">Transkript mevcut değil</string>
+    <string name="voicemail_play">Dinle</string>
+    <string name="voicemail_share">Paylaş</string>
+    <string name="voicemail_archive">Arşivle</string>
+    <string name="voicemail_delete_confirm">Bu sesli mesajı silmek istediğinizden emin misiniz?</string>
+    <string name="nav_voicemail">Sesli Mesaj</string>
+
+    <!-- v2: Dashboard Eklentileri -->
+    <string name="dashboard_assistant_status">Asistan Durumu</string>
+    <string name="dashboard_assistant_active">Asistan Aktif</string>
+    <string name="dashboard_assistant_inactive">Asistan Pasif</string>
+    <string name="dashboard_customize_assistant">Asistanı Özelleştir</string>
+    <string name="dashboard_voicemails">Sesli Mesajlar</string>
+    <string name="dashboard_recent_sessions">Son Oturumlar</string>
+    <string name="dashboard_no_sessions">Henüz asistan oturumu yok</string>
+    <string name="dashboard_session_summary">%1$s — %2$d mesaj</string>
+
 </resources>

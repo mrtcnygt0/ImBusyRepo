@@ -3,8 +3,7 @@ package com.suanmesgulum.app.di
 import android.content.Context
 import androidx.room.Room
 import com.suanmesgulum.app.data.local.AppDatabase
-import com.suanmesgulum.app.data.local.dao.CallLogDao
-import com.suanmesgulum.app.data.local.dao.CustomModeDao
+import com.suanmesgulum.app.data.local.dao.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,7 +25,9 @@ object DatabaseModule {
             context,
             AppDatabase::class.java,
             AppDatabase.DATABASE_NAME
-        ).build()
+        )
+            .addMigrations(AppDatabase.MIGRATION_1_2)
+            .build()
     }
 
     @Provides
@@ -37,5 +38,30 @@ object DatabaseModule {
     @Provides
     fun provideCallLogDao(database: AppDatabase): CallLogDao {
         return database.callLogDao()
+    }
+
+    @Provides
+    fun provideCallSessionDao(database: AppDatabase): CallSessionDao {
+        return database.callSessionDao()
+    }
+
+    @Provides
+    fun provideCallMessageDao(database: AppDatabase): CallMessageDao {
+        return database.callMessageDao()
+    }
+
+    @Provides
+    fun provideVoicemailDao(database: AppDatabase): VoicemailDao {
+        return database.voicemailDao()
+    }
+
+    @Provides
+    fun provideSpotifyTrackDao(database: AppDatabase): SpotifyTrackDao {
+        return database.spotifyTrackDao()
+    }
+
+    @Provides
+    fun provideAssistantSettingsDao(database: AppDatabase): AssistantSettingsDao {
+        return database.assistantSettingsDao()
     }
 }

@@ -40,6 +40,17 @@ _An Android application that automatically answers incoming phone calls with a v
 - 🧭 **Jetpack Navigation Component** with bottom navigation
 - 🎨 **Material Design** components and theming
 
+### v2: AI Call Assistant / Yapay Zeka Çağrı Asistanı
+
+- 🤖 **AI Call Screening** — assistant answers calls, has multi-turn dialogues with callers / Asistan aramaları cevaplar, arayanlarla çok turlu diyalog kurar
+- 🎙️ **Vosk STT** — real-time speech-to-text for caller transcription / Arayan ses tanıma
+- 📝 **Live Call Activity** — watch real-time transcript as assistant talks to caller / Gerçek zamanlı transkript izleme
+- 📱 **3-Button Notification** — "Assistant Answer" / "Silent Reject" / "Ignore" / 3 butonlu bildirim
+- 📬 **Voicemail** — callers can leave voice messages, stored with transcripts / Sesli mesaj bırakma ve transkript
+- ⚙️ **Assistant Customization** — configure name, personality, greetings, farewell messages / Asistan kişiselleştirme
+- 🗣️ **TTS Voice Selection** — preview and select from available TTS voices / Ses seçimi ve önizleme
+- 🎵 **Spotify Integration** (stub) — prepared for future hold music / Bekleme müziği altyapısı
+
 ---
 
 ## 📐 Architecture / Mimari
@@ -49,15 +60,23 @@ com.suanmesgulum.app/
 ├── domain/                     # Domain Layer
 │   ├── model/
 │   │   ├── CustomMode.kt       # Busy mode data class
-│   │   └── CallLogItem.kt      # Call log data class
+│   │   ├── CallLogItem.kt      # Call log data class
+│   │   ├── CallSession.kt      # v2: Call session tracking
+│   │   ├── CallMessage.kt      # v2: Individual messages in session
+│   │   ├── Voicemail.kt        # v2: Voicemail recordings
+│   │   ├── SpotifyTrack.kt     # v2: Music track (stub)
+│   │   └── AssistantSettings.kt# v2: Assistant configuration
 │   └── repository/
 │       ├── CustomModeRepository.kt
-│       └── CallLogRepository.kt
+│       ├── CallLogRepository.kt
+│       ├── CallSessionRepository.kt    # v2
+│       ├── VoicemailRepository.kt      # v2
+│       └── AssistantSettingsRepository.kt # v2
 ├── data/                       # Data Layer
 │   ├── local/
-│   │   ├── entity/             # Room entities
-│   │   ├── dao/                # Room DAOs
-│   │   ├── AppDatabase.kt     # Room database
+│   │   ├── entity/             # Room entities (7 total)
+│   │   ├── dao/                # Room DAOs (7 total)
+│   │   ├── AppDatabase.kt     # Room database v2 (with migration)
 │   │   └── mapper/            # Entity ↔ Domain mapping
 │   └── repository/            # Repository implementations
 ├── di/                        # Dependency Injection
@@ -71,33 +90,56 @@ com.suanmesgulum.app/
 │   └── TtsManager.kt          # Engine selection manager
 ├── service/                   # Services & Receivers
 │   ├── ServicePreferences.kt
-│   ├── BusyCallScreeningService.kt
+│   ├── BusyCallScreeningService.kt  # v2: 3-button notification
 │   ├── BusyForegroundService.kt
 │   ├── TtsPlaybackService.kt
-│   └── CallActionReceiver.kt
+│   ├── CallActionReceiver.kt       # v2: +ASSISTANT_ANSWER, +IGNORE
+│   ├── PhoneStateReceiver.kt       # v2: 3-button notification
+│   ├── orchestrator/
+│   │   └── CallOrchestratorService.kt  # v2: State machine
+│   ├── stt/
+│   │   ├── SpeechToTextManager.kt  # v2: Vosk STT
+│   │   └── SttModule.kt
+│   ├── audio/
+│   │   ├── AudioPlayerManager.kt   # v2: Audio playback
+│   │   ├── MusicPlayer.kt          # v2: Interface
+│   │   └── AudioModule.kt
+│   ├── spotify/
+│   │   ├── SpotifyManager.kt       # v2: Stub
+│   │   └── SpotifyModule.kt
+│   └── voicemail/
+│       ├── VoicemailManager.kt     # v2
+│       └── VoicemailModule.kt
 ├── billing/
 │   └── BillingManager.kt      # Google Play Billing
 ├── presentation/              # UI Layer
 │   ├── main/                  # MainActivity
-│   ├── dashboard/             # Dashboard screen
+│   ├── dashboard/             # Dashboard screen (v2: +assistant buttons)
 │   ├── modes/                 # Modes CRUD screen
 │   ├── logs/                  # Call logs screen
 │   ├── settings/              # Settings screen
-│   └── modeselect/           # Quick mode select dialog
-└── ImBusyApplication.kt      # @HiltAndroidApp
+│   ├── modeselect/           # Quick mode select dialog
+│   ├── incomingcall/         # Incoming call full-screen
+│   ├── livecall/             # v2: Live call transcript screen
+│   ├── assistant/            # v2: Assistant customize (ViewPager2)
+│   └── voicemail/            # v2: Voicemail list & playback
+└── ImBusyApplication.kt      # @HiltAndroidApp (v2: 5 channels)
 ```
 
 ---
 
 ## 🖥️ Screens / Ekranlar
 
-| Screen          | Description                                                          |
-| --------------- | -------------------------------------------------------------------- |
-| **Dashboard**   | Service toggle, today's call stats, most used mode, quick navigation |
-| **Modes**       | Create/edit/delete busy modes, set default mode, reorder             |
-| **Call Logs**   | List of auto-answered calls with date, caller info, mode used        |
-| **Settings**    | Auto-answer toggle, language selection (TR/EN), premium purchase     |
-| **Mode Select** | Dialog-style activity launched from notification for quick mode pick |
+| Screen                     | Description                                                          |
+| -------------------------- | -------------------------------------------------------------------- |
+| **Dashboard**              | Service toggle, today's call stats, assistant buttons, quick nav     |
+| **Modes**                  | Create/edit/delete busy modes, set default mode, reorder             |
+| **Call Logs**              | List of auto-answered calls with date, caller info, mode used        |
+| **Settings**               | Auto-answer toggle, language selection (TR/EN), premium purchase     |
+| **Mode Select**            | Dialog-style activity launched from notification for quick mode pick |
+| **Live Call** (v2)         | Real-time transcript of assistant-caller dialogue, continue/reject   |
+| **Assistant Customize** (v2) | ViewPager2 with 3 tabs: General, Messages, Voices                 |
+| **Voicemail** (v2)         | List voicemails with playback, transcript, archive, delete           |
 
 ---
 
